@@ -257,8 +257,8 @@ public class Example {
         print("Operation: %d (%s)", stat.getOperation(), Operation.values()[stat.getOperation()]);
         print("Operation mode: %d (%s)", stat.getOperationMode(), OperationMode.values()[stat.getOperationMode()]);
         print("Airflow: %d", stat.getAirFlow());
-        print("Horizontal wind direction: %d", stat.getWindDirectionLR());
-        print("Vertical wind direction: %d", stat.getWindDirectionUD());
+        print("LR wind direction: %d", stat.getWindDirectionLR());
+        print("UD wind direction: %d", stat.getWindDirectionUD());
         print("Model No: %d (%s)", stat.getModelNo(), Model.values()[stat.getModelNo()]);
         print("Error code: %s", stat.getErrorCode());
         print("Preset temperature: %.1f °C", stat.getPresetTemp());

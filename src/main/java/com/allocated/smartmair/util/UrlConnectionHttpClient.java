@@ -13,6 +13,8 @@ import java.nio.charset.Charset;
  */
 public class UrlConnectionHttpClient implements HttpClient {
     private static final Charset CHARSET = Charset.forName("UTF-8");
+    private static final int CONNECT_TIMEOUT = 5000;
+    private static final int READ_TIMEOUT = 5000;
 
     @Override
     public String postJson(String urlString, String data) throws IOException {
@@ -21,6 +23,8 @@ public class UrlConnectionHttpClient implements HttpClient {
         conn.setDoOutput(true);
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");
+        conn.setConnectTimeout(CONNECT_TIMEOUT);
+        conn.setReadTimeout(READ_TIMEOUT);
 
         try(OutputStream output = conn.getOutputStream()){
             output.write(data.getBytes(CHARSET));
